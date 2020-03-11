@@ -347,6 +347,8 @@ class Main:
                 for xidx, char in enumerate(line):
                     if char == '*':
                         self.coins.append(vect(xidx, yidx))
+                    if char == "P":
+                        self.powerups.append(vect(xidx, yidx))
         self.state = 'play'
         pg.mixer.music.load('sounds/pacman-beginning.wav')
         pg.mixer.music.play()

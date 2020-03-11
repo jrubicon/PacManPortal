@@ -13,7 +13,7 @@ class Player:
         self.nowallblock = True
         self.score = 0
         self.highscore = 0
-        self.lives = 1
+        self.lives = 3
         self.starting_pos = [pos.x, pos.y]
 
     def update(self):
@@ -33,6 +33,7 @@ class Player:
         self.grid_pos[1] = (self.pixel_pos[1]-55+self.game.cellheight//2)//self.game.cellheight+1
 
         self.eatcoin()
+        self.eatpower()
 
 
     def draw(self):
@@ -111,7 +112,12 @@ class Player:
         else:
             print("close portals")
 
-
-
     def checkforportal(self):
         pass
+
+    def eatpower(self):
+        if self.grid_pos in self.game.powerups:
+            self.game.powerups.remove(self.grid_pos)
+            self.score += 10
+            pg.mixer.music.load('sounds/pacman-pellet-eat.wav')
+            pg.mixer.music.play()
