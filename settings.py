@@ -1,5 +1,3 @@
-from pygame.math import Vector2 as vect
-
 # Game Settings
 HS_FILE = "highscore.txt"
 # Screen Settings
@@ -31,9 +29,6 @@ GRAY = (107, 107, 107)
 WHITE = (255, 255, 255)
 COIN = (255, 255, 0)
 POWERUP = (255, 255, 255)
-
-# Player Settings
-#PLAYERSTARTPOS = vect(14,17)
 
 PLAYERCOLOR = (255, 255, 0)
 SPEED = 5
